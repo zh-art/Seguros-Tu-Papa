@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.UUID;
 
 @Entity
 @Table
@@ -12,39 +13,39 @@ import java.time.Period;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
 
-    private Long id;
+    private UUID id;
 
     @Column(unique = true)
     private String name;
     private float price;
-    private LocalDate date;
+    private LocalDate fecha;
 
     @Transient
-    private int antiquity;
+    private int antiguedad;
 
     public Product() {
     }
 
-    public Product(Long id, String name, float price, LocalDate date) {
+    public Product(UUID id, String name, float price, LocalDate fecha) {
         this.id = id;
         this.name = name;
         this.price = price;
-        this.date = date;
+        this.fecha = fecha;
     }
 
-    public Product(String name, float price, LocalDate date) {
+    public Product(String name, float price, LocalDate fecha) {
         this.name = name;
         this.price = price;
-        this.date = date;
+        this.fecha = fecha;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
@@ -64,19 +65,19 @@ public class Product {
         this.price = price;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDate getFecha() {
+        return fecha;
     }
 
-    public void setDate(LocalDate fecha) {
-        this.date = date;
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
     }
 
-    public int getAntiguity() {
-        return Period.between(this.date,LocalDate.now()).getYears();
+    public int getAntiguedad() {
+        return Period.between(this.fecha,LocalDate.now()).getYears();
     }
 
-    public void setAntiquity(int antiguity) {
-        this.antiquity = antiquity;
+    public void setAntiguedad(int antiguedad) {
+        this.antiguedad = antiguedad;
     }
 }

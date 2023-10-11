@@ -5,6 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -12,7 +14,7 @@ import java.util.Optional;
 @Service
 public class ProductService {
 
-    HashMap<String, Object> info;
+    HashMap<String, Object> datos;
 
     private final ProductRepository productRepository;
 
@@ -28,48 +30,48 @@ public class ProductService {
 
         Optional<Product> res = productRepository.findProductByName(product.getName());
 
-        info = new HashMap<>();
+        datos = new HashMap<>();
 
         if(res.isPresent() && product.getId()==null){
-            info.put("error", true);
-            info.put("message", "Product exist!");
+            datos.put("error", true);
+            datos.put("message", "Ya existe un producto con ese nombre");
             return new ResponseEntity<>(
-                    info,
+                    datos,
                     HttpStatus.CONFLICT
             );
         }
 
-        info.put("message", "Save success!");
+        datos.put("message", "Se guardó con exito");
         if(product.getId()!=null){
-            info.put("message", "Update success!");
+            datos.put("message", "Se actualizó con exito");
         }
 
         productRepository.save(product);
-        info.put("data", product);
+        datos.put("data", product);
             return new ResponseEntity<>(
-                    info,
+                    datos,
                     HttpStatus.CREATED
         );
     }
 
-    public ResponseEntity<Object> deleteProduct(Long id){
+    public ResponseEntity<Object> deleteproduct(Long id){
 
-        info = new HashMap<>();
+        datos = new HashMap<>();
 
-        boolean exists = this.productRepository.existsById(id);
+        boolean existe = this.productRepository.existsById(id);
 
-        if(!exists){
-            info.put("error", true);
-            info.put("message", "No exists!");
+        if(!existe){
+            datos.put("error", true);
+            datos.put("message", "No existe un producto con ese id");
             return new ResponseEntity<>(
-                    info,
+                    datos,
                     HttpStatus.CONFLICT
             );
         }
         productRepository.deleteById(id);
-        info.put("message", "Delete success!");
+        datos.put("message", "Producto eliminado");
         return new ResponseEntity<>(
-                info,
+                datos,
                 HttpStatus.ACCEPTED
         );
     }
