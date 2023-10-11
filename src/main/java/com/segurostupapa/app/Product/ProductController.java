@@ -5,8 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
 
 @RestController
@@ -27,18 +25,18 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> registrarProducto(@RequestBody Product product){
+    public ResponseEntity<Object> registerProduct(@RequestBody Product product){
         return this.productService.newProduct(product);
     }
 
     @PutMapping
-    public ResponseEntity<Object> actualizarProducto(@RequestBody Product product){
+    public ResponseEntity<Object> updateProduct(@RequestBody Product product){
         return this.productService.newProduct(product);
     }
 
     @DeleteMapping(path = "{productId}")
-    public ResponseEntity<Object> eliminar(@PathVariable("productId") Long id){
-        return this.productService.deleteproduct(id);
+    public ResponseEntity<Object> deleteProduct(@PathVariable("productId") Long id){
+        return this.productService.deleteProduct(id);
     }
 
 }

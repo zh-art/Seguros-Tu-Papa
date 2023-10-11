@@ -19,25 +19,25 @@ public class Product {
     @Column(unique = true)
     private String name;
     private float price;
-    private LocalDate fecha;
+    private LocalDate date;
 
     @Transient
-    private int antiguedad;
+    private int antiquity;
 
     public Product() {
     }
 
-    public Product(Long id, String name, float price, LocalDate fecha) {
+    public Product(Long id, String name, float price, LocalDate date) {
         this.id = id;
         this.name = name;
         this.price = price;
-        this.fecha = fecha;
+        this.date = date;
     }
 
-    public Product(String name, float price, LocalDate fecha) {
+    public Product(String name, float price, LocalDate date) {
         this.name = name;
         this.price = price;
-        this.fecha = fecha;
+        this.date = date;
     }
 
     public Long getId() {
@@ -64,19 +64,19 @@ public class Product {
         this.price = price;
     }
 
-    public LocalDate getFecha() {
-        return fecha;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
+    public void setDate(LocalDate fecha) {
+        this.date = date;
     }
 
-    public int getAntiguedad() {
-        return Period.between(this.fecha,LocalDate.now()).getYears();
+    public int getAntiguity() {
+        return Period.between(this.date,LocalDate.now()).getYears();
     }
 
-    public void setAntiguedad(int antiguedad) {
-        this.antiguedad = antiguedad;
+    public void setAntiquity(int antiguity) {
+        this.antiquity = antiquity;
     }
 }
