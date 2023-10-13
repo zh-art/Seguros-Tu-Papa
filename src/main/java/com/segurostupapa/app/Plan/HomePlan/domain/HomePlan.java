@@ -1,9 +1,9 @@
 package com.segurostupapa.app.Plan.HomePlan.domain;
 
+import com.segurostupapa.app.Policy.HomePolicy.domain.HomePolicy;
 import jakarta.persistence.*;
-
-import java.util.HashSet;
 import java.util.Set;
+import java.util.HashSet;
 import java.util.UUID;
 
 @Entity
@@ -16,7 +16,15 @@ public class HomePlan {
     private String name;
     private Double price;
 
+    public HomePlan() {
+    }
+
+    public HomePlan(String name, Double price) {
+        this.name = name;
+        this.price = price;
+    }
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "plan_id", referencedColumnName = "id")
-    Set<HomePlan> automobile_policies = new HashSet<>();
+    Set<HomePolicy> home_policies = new HashSet<>();
 }

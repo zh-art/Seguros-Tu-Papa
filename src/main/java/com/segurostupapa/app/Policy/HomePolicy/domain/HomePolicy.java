@@ -33,6 +33,9 @@ public class HomePolicy {
     @Column(name = "plan_id")
     UUID plan_id;
 
+    public HomePolicy() {
+    }
+
     public HomePolicy(Integer bathrooms, String construction_type, Integer bedrooms, Double property_tax, Double square_meters, String address) {
         this.bathrooms = bathrooms;
         this.construction_type = construction_type;
@@ -44,6 +47,13 @@ public class HomePolicy {
 
     public UUID getId() {
         return id;
+    }
+    public void setPlan_id(UUID plan_id) {
+        this.plan_id = plan_id;
+    }
+
+    public void setClient_id(UUID client_id) {
+        this.client_id = client_id;
     }
 
     public Integer getBathrooms() {
@@ -96,5 +106,13 @@ public class HomePolicy {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public void setPolicy(Policy policy) {
+        this.policy = policy;
+    }
+
+    public Policy getPolicy() {
+        return policy;
     }
 }
