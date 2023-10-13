@@ -1,4 +1,4 @@
-package com.segurostupapa.app.Product;
+package com.segurostupapa.app.domain.entities;
 
 import jakarta.persistence.*;
 

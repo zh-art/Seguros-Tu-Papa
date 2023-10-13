@@ -1,4 +1,4 @@
-package com.segurostupapa.app;
+package com.segurostupapa.app.adapters.controllers;
 
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;

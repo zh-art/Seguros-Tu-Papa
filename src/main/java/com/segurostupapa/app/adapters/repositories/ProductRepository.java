@@ -1,5 +1,6 @@
-package com.segurostupapa.app.Product;
+package com.segurostupapa.app.adapters.repositories;
 
+import com.segurostupapa.app.domain.entities.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

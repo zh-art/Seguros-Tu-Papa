@@ -1,4 +1,4 @@
-package com.segurostupapa.app;
+package com.segurostupapa.app.adapters.configuration;
 
 
 import org.springframework.beans.factory.annotation.Value;

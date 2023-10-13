@@ -1,4 +1,4 @@
-package com.segurostupapa.app.Policy;
+package com.segurostupapa.app.domain.entities;
 
 import jakarta.persistence.*;
 
@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @Entity
 @Table
-public class PolicyEntiy {
+public class Policy {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -18,7 +18,7 @@ public class PolicyEntiy {
 
     private LocalDate payment_due_date;
 
-    public PolicyEntiy(
+    public Policy(
             UUID id,
             Boolean is_active,
             LocalDate cutoff_date,

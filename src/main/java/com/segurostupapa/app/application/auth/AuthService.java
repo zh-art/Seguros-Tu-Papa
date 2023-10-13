@@ -1,4 +1,4 @@
-package com.segurostupapa.app.Auth;
+package com.segurostupapa.app.application.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

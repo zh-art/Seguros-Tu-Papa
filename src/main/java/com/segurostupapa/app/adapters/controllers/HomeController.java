@@ -1,4 +1,4 @@
-package com.segurostupapa.app;
+package com.segurostupapa.app.adapters.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
