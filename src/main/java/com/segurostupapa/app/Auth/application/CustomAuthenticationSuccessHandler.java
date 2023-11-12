@@ -20,7 +20,6 @@ import java.util.UUID;
 
 @Component
 public class CustomAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
-
     private final CreateClient createClient;
     private final FindClientByEmail findClientByEmail;
 
