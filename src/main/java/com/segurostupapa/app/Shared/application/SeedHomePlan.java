@@ -17,9 +17,9 @@ public class SeedHomePlan {
 
     @PostConstruct
     public void run() {
-        HomePlan bronze = new HomePlan("Bronze Plan", 100.99);
-        HomePlan silver = new HomePlan("Silver Plan", 120.99);
-        HomePlan gold = new HomePlan("Gold Plan", 140.99);
+        HomePlan bronze = new HomePlan("Bronze Plan", 99.99);
+        HomePlan silver = new HomePlan("Silver Plan", 119.99);
+        HomePlan gold = new HomePlan("Gold Plan", 149.99);
         HomePlan platinum = new HomePlan("Platinum Plan", 199.99);
 
         createHomePlan.run(bronze);

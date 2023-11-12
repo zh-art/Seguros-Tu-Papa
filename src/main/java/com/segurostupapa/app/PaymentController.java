@@ -4,13 +4,16 @@ import com.segurostupapa.app.StripePayment.application.CreatePaymentResponse;
 import com.stripe.exception.StripeException;
 import com.stripe.model.PaymentIntent;
 import com.stripe.param.PaymentIntentCreateParams;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class PaymentController {
-    @PostMapping("/create-payment-intent")
+    @PostMapping("create-payment-intent")
     public CreatePaymentResponse createPayment(@RequestBody CreatePayment createPayment) throws StripeException {
         PaymentIntentCreateParams params =
                     PaymentIntentCreateParams.builder()
